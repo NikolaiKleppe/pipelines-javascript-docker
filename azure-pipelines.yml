@@ -12,12 +12,12 @@ variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: '815381cf-36e9-4916-89c7-92690bf02834'
   imageRepository: 'mydocimage1'
-  containerRegistry: 'rcconsertestakscr.azurecr.io'
+  containerRegistry: 'devsecopscontainer212.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/app/Dockerfile'
   tag: '$(Build.BuildId)'
 
   # Agent VM image name
-  vmImageName: 'ubuntu-latest'
+  #vmImageName: 'ubuntu-latest'
 
 stages:
 - stage: Build
@@ -26,7 +26,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
-      vmImage: $(vmImageName)
+      name: aks_agent_pool
     steps:
     - task: Docker@2
       displayName: Build and push an image to container registry
