@@ -10,9 +10,9 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
-  #dockerRegistryServiceConnection: 'rcconsertestakscr'
+  dockerRegistryServiceConnection: 'rcconsertestakscr-con'
   imageRepository: 'mydocimage1'
-  containerRegistry: 'rcconsertestakscr'
+  #containerRegistry: 'rcconsertestakscr'
   dockerfilePath: '$(Build.SourcesDirectory)/app/Dockerfile'
   tag: '$(Build.BuildId)'
 
@@ -34,6 +34,6 @@ stages:
         command: buildAndPush
         repository: $(imageRepository)
         dockerfile: $(dockerfilePath)
-        containerRegistry: $(containerRegistry)
+        containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
