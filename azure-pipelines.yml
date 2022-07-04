@@ -2,6 +2,11 @@
 # Build and push an image to Azure Container Registry
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
+
+# Docs:
+# Docker Task Ref: https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/build/docker?view=azure-devops&preserve-view=true
+# This yaml file is from this guide: https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/containers/acr-template?view=azure-devops
+
 trigger:
 - master
 
