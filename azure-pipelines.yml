@@ -6,6 +6,7 @@
 # Docs:
 # Docker Task Ref: https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/build/docker?view=azure-devops&preserve-view=true
 # This yaml file is from this guide: https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/containers/acr-template?view=azure-devops
+# Docker on Windows Install: https://docs.microsoft.com/en-us/virtualization/windowscontainers/quick-start/set-up-environment?tabs=Windows-Server#install-docker
 
 trigger:
 - master
