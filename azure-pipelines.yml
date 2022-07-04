@@ -31,7 +31,7 @@ stages:
     pool:
       name: aks_agent_pool
     steps:
-    - task: PowerShell@2
+    - task: PowerShell@2 #Verify that the user running these commands is the Network Service user
       inputs:
         targetType: inline
         script: whoami
