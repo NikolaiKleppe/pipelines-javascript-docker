@@ -23,8 +23,8 @@ variables:
 
 stages:
 
-- stage: ACR Login
-  displayName: ACR Login
+- stage: ACRLogin
+  displayName: ACRLogin
   jobs:
   - job: Build
     displayName: Build
