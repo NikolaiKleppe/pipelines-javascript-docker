@@ -21,9 +21,7 @@ variables:
   #containerRegistry: 'rcconsertestakscr'
   dockerfilePath: '$(Build.SourcesDirectory)/app/Dockerfile'
   tag: '$(Build.BuildId)'
-
-  # Agent VM image name
-  #vmImageName: 'ubuntu-latest'
+  agent_pool: 'aks_agent_pool_linux'
 
 
 
@@ -35,11 +33,14 @@ stages:
   - job: Build
     displayName: Build
     pool:
-      name: aks_agent_pool
+      name: $(agent_pool)
     steps:
-    - task: PowerShell@2 #Verify that the user running these commands is the Network Service user
+    #- task: PowerShell@2 #Verify that the user running these commands is the Network Service user
+    #  inputs:
+    #    targetType: inline
+    #    script: whoami
+    - task: Bash@3
       inputs:
-        targetType: inline
         script: whoami
     - task: Docker@2
       displayName: Login to ACR
@@ -54,7 +55,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
-      name: aks_agent_pool_linux
+      name: $(agent_pool)
     steps:
     - task: Docker@2
       displayName: Build and push an image to container registry
