@@ -21,7 +21,7 @@ variables:
   #containerRegistry: 'rcconsertestakscr'
   dockerfilePath: '$(Build.SourcesDirectory)/app/Dockerfile'
   tag: '$(Build.BuildId)'
-  agent_pool: 'aks_agent_pool_linux'
+  agent_pool: 'aks_agent_pool'
 
 
 
